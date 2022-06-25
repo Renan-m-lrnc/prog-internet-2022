@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo de Formulário</title>
+    <style>
+        div {
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Exemplo de uso de um Formulário</h1>
+    </header>
+    <section id="cadastro">
+        <h2>Início Formulário</h2>
+        <form action="#">
+            <!--Nome-->
+            <div>
+                <label for="nome">Digite seu Nome:</label>
+                <input type="text" name="Nome" id="nome" required>
+            </div>
+            <!--Endereço-->
+            <div>
+                <label for="endereco">Digite seu Endereço:</label>
+                <input type="text" name="endereco" id="endereco" required>
+            </div>
+            <!--Telefone-->
+            <div>
+                <label for="telefone">Digite seu telefone:</label>
+                <input type="tel" name="telefone" id="telefone" required>
+            </div>
+            <!--Email-->
+            <div>
+                <label for="email">Digite seu email:</label>
+                <input type="text" name="email" id="email" required>
+            </div>
+            <!--Data de nascimento-->
+            <div>
+                <label for="dtnas">Digite sua data de nascimento:</label>
+                <input type="date" name="dtnas" id="dtnas">
+            </div>
+            <!--Senha-->
+            <div>
+                <label for="senha">Digite a senha</label>
+                <input type="password" name="senha" id="senha" required>
+            </div>
+            <!--Idade-->
+            <div>
+                <label for="idade">Idigite sua idade:</label>
+                <input type="number" name="idade" id="idade">
+            </div>
+            <input type="submit" value="Enviar">
+        </form>
+    </section>
+</body>
+
+</html>
