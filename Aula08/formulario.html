@@ -17,45 +17,292 @@
     <header>
         <h1>Exemplo de uso de um Formulário</h1>
     </header>
+    <section id="sumario">
+        <h2>indice de tags hgittml</h2>
+        <div style="display: flex; flex-direction: row;"
+        <fieldset id="inputs">
+            <legend>Tipos de Input</legend>
+            <ul>
+                <li><a href="#btnOla">button</a></li>
+                <li><a href="#usotabaco">checkbox</a></li>
+                <li><a href="#cor">color</a></li>
+                <li><a href="#dtnas">date</a></li>
+                <li><a href="#dhl">datetime-local</a></li>
+                <li><a href="#email">email</a></li>
+                <li><a href="#arquivo">file</a></li>
+                <li><a href="#id">hidden</a></li>
+                <li><a href="#btnimage">image</a></li>
+                <li><a href="#mespagamento">month</a></li>
+                <li><a href="#idade">number</a></li>
+                <li><a href="#senha">password</a></li>
+                <li><a href="#idcasado">radio</a></li>
+                <li><a href="#grausatisfacao">range</a></li>
+                <li><a href="#btnLimpar">reset</a></li>
+                <li><a href="#pesquisar">search</a></li>
+                <li><a href="#btnEnviar">submit</a></li>
+                <li><a href="#telefone">tel</a></li>
+                <li><a href="#nome">text</a></li>
+                <li><a href="#navegador">text com datalist</a></li>
+                <li><a href="#hentrega">time</a></li>
+                <li><a href="#pagina">url</a></li>
+                <li><a href="#semana">week</a></li>
+            </ul>
+        </fieldset>
+        <fieldset>
+            <legend>Seletores</legend>
+            <ul>
+                <li><a href="#seltime">Select de uma linha</a></li>
+                <li><a href="#seljogos">Select de lista</a></li>
+            </ul>
+        </fieldset>
+        <fieldset>
+            <legend>Datalist</legend>
+            <ul>
+                <li><a href="#inplegumes">Datalist com Rótulos</a></li>
+            </ul>
+        </fieldset>
+        <fieldset>
+            <legend>Textarea</legend>
+            <ul>
+                <li><a href="#txtbio">Exemplo textarea</a></li>
+            </ul>
+        </fieldset>
+    </section>
     <section id="cadastro">
         <h2>Início Formulário</h2>
-        <form action="#">
+        <form action="#" method="post">
+            <!--Uso do Hidden-->
+            <div>
+               <label for="id">Aqui tem um campo hidden</label>
+               <input type="hidden" name="id" id="id" value="10">
+            </div>
+            <!--Button-->
+            <div>
+                <label for="btnOla">Exemplo de button</label>
+                <input type="button" value="Clique-me" id="btnOla" onclick="alert('Olá Mundo');">
+            </div>
+            <!--Uso do checkbox-->
+            <div>
+                <fieldset>
+                    <legend>Estilo de Vida</legend>
+                    <div>
+                        <input type="checkbox" name="usotabaco" id="usotabaco">
+                        <label for="usotabaco">Você fuma ?</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="praticaesporte" id="praticaesporte">
+                        <label for="praticaesporte">Pratica Esporte?</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="usoalcool" id="usoalcool">
+                        <label for="usoalcool">Você ingere alcool durante a semana?</label>
+                    </div>
+                </fieldset>
+            </div>
+            <!--Uso do radio-->
+            <div>
+                <fieldset>
+                    <legend>Estado Civil</legend>
+                    <div>
+                        <input type="radio" name="civil" id="idcasado" value="Casado">
+                        <label for="idcasado">Casado</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="civil" id="idsolteiro" value="Solteiro">
+                        <label for="idsolteiro">Solteiro</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="civil" id="iddesquitado" value="Desquitado">
+                        <label for="iddesquitado">Desquitado</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="civil" id="iddivorciado" value="Divorciado">
+                        <label for="iddivorciado">Divorciado</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="civil" id="idviuvo" value="Viuvo">
+                        <label for="idviuvo">Viuvo</label>
+                    </div>
+                </fieldset>
+            </div>
+            <!--Cor-->
+            <div>
+                <label for="cor">Escolha uma cor</label>
+                <input type="color" name="cor" id="cor">
+            </div>
             <!--Nome-->
             <div>
                 <label for="nome">Digite seu Nome:</label>
-                <input type="text" name="Nome" id="nome" required>
+                <input type="text" name="Nome" id="nome" placeholder="Digite seu nome" required>
             </div>
             <!--Endereço-->
             <div>
-                <label for="endereco">Digite seu Endereço:</label>
-                <input type="text" name="endereco" id="endereco" required>
+                <label for="endereco">Endereço:</label>
+                <input type="text" name="endereco" id="endereco" placeholder="Digite seu endereço" required>
             </div>
             <!--Telefone-->
             <div>
-                <label for="telefone">Digite seu telefone:</label>
-                <input type="tel" name="telefone" id="telefone" required>
+                <label for="telefone">Telefone:</label>
+                <input type="tel" name="telefone" id="telefone" placeholder="Digite seu telefone" pattern="\(\d{2}\\) \d{5}\-\d{4}"> <!--(00) 00000-0000-->
             </div>
             <!--Email-->
             <div>
-                <label for="email">Digite seu email:</label>
-                <input type="text" name="email" id="email" required>
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email" placeholder="Digite seu email" required>
             </div>
             <!--Data de nascimento-->
             <div>
-                <label for="dtnas">Digite sua data de nascimento:</label>
+                <label for="dtnas">Data de nascimento:</label>
                 <input type="date" name="dtnas" id="dtnas">
             </div>
             <!--Senha-->
             <div>
-                <label for="senha">Digite a senha</label>
-                <input type="password" name="senha" id="senha" required>
+                <label for="senha">Senha</label>
+                <input type="password" name="senha" id="senha" placeholder="Digite sua senha" required>
             </div>
             <!--Idade-->
             <div>
-                <label for="idade">Idigite sua idade:</label>
-                <input type="number" name="idade" id="idade">
+                <label for="idade">Idade:</label>
+                <input type="number" name="idade" id="idade" placeholder="Digite sua idade">
             </div>
-            <input type="submit" value="Enviar">
+            <!--Uso do range-->
+            <div>
+                <label for="grausatisfacao">Indique o grau de satisfação sobre o formulário</label>
+                <input type="range" name="grau" id="grausatisfacao" min="0" max="10" step="1" list="lstnotas">
+                <datalist id="lstnotas">
+                    <option value="0"></option>
+                    <option value="1"></option>
+                    <option value="2"></option>
+                    <option value="3"></option>
+                    <option value="4"></option>
+                    <option value="5"></option>
+                    <option value="6"></option>
+                    <option value="7"></option>
+                    <option value="8"></option>
+                    <option value="9"></option>
+                    <option value="10"></option>
+                </datalist>
+            </div>
+            <!--Uso do datalist para um teste-->
+            <div>
+                <label for="navegador">Escolha seu navegador de preferencia</label>
+                <input type="text" name="navegador" id="navegador" list="lstNavegador">
+                <datalist id="lstNavegador">
+                    <option value="Edge"></option>
+                    <option value="Chrome"></option>
+                    <option value="Firefox"></option>
+                    <option value="Opera"></option>
+                    <option value="Safari"></option>
+                </datalist>
+            </div>
+            <!--Uso do url-->
+            <div>
+                <label for="pagina">Indique o endereço da pagina pessoal</label>
+                <input type="url" name="pagina" id="pagina">
+            </div>
+            <!--Uso do Month-->
+            <div>
+                <label for="mespagamento">Indique o mês para pagamento de sua assinatura</label>
+                <input type="month" name="mespagamento" id="mespagamento">
+            </div>
+            <!--Uso do datetime-local-->
+            <div>
+                <label for="dhl">Data/Hora venda:</label>
+                <input type="datetime-local" name="dhl" id="dhl">
+            </div>
+            <!--Hora da entrega (time)-->
+            <div>
+                <label for="hentrega">Hora da entrega:</label>
+                <input type="time" name="hentrega" id="hentrega">
+            </div>
+            <!--Uso do week-->
+            <div>
+                <label for="semana">Semana do curso:</label>
+                <input type="week" name="semana" id="semana">
+            </div>
+            <!--Uso do Search-->
+            <div>
+                <label for="pequisar">Digite o termo a ser pesquisado</label>
+                <input type="search" name="pesquisar" id="pesquisar">
+            </div>
+            <!--Uso do file-->
+            <div>
+                <label for="arquivo">Foto pessoal</label>
+                <input type="file" name="arquivo" id="arquivo">
+            </div>
+            <!--Uso do file com multiplos arquivos-->
+            <div>
+                <label for="fotos">Indicar fotos de produtos</label>
+                <input type="file" name="fotoprodutos" id="fotoprodutos" multiple>
+            </div>
+            <!--Uso do input image-->
+            <div>
+                <label for="btnimage">Usando o input image</label>
+                <input type="image" src="https://www.freeiconspng.com/uploads/login-button-png-5.png" alt="iamge login" width="80px" id="btnimage">
+            </div>
+            <!--Uso do datalist-->
+                <fieldset>
+                    <legend>Uso do Datalist</legend>
+                    <div>
+                        <!--Datalist com Rótulos-->
+                        <label for="inplegumes">Legumes:</label>
+                        <input list="lstlegumes" type="text" id="inplegumes" name="legumes">
+                        <datalist id="lstlegumes">
+                            <option value="01">Brócolis</option>
+                            <option value="02">Pimentão</option>
+                            <option value="03">Batata</option>
+                            <option value="04">Cenoura</option>
+                        </datalist>
+                    </div>
+                </fieldset>
+            <!--Seletores-->
+            <fieldset>
+                <legend>Seletores</legend>
+                <div>
+                    <label for="seltime">Time do coração:</label>
+                    <select name="seltime" id="seltime">
+                        <optgroup label="Times Paulistas">
+                            <option value="01">Corithians</option>
+                            <option value="02">São Paulo</option>
+                            <option value="03">Palmeiras</option>
+                            <option value="04" selected>Santos</option> <!--Opção selecionada-->
+                        </optgroup>
+                        <optgroup label="Times Cariocas">
+                            <option value="05">Fluminense</option>
+                            <option value="06">Botafogo</option>
+                            <option value="07">Flamengo</option>
+                            <option value="08">Vasco da gama</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <div>
+                    <label for="seljogos">Jogos Eletrónicos:</label>
+                    <div>
+                    <select name="seljogos" id="seljogos" multiple size="5">
+                        <optgroup label="Aventura">
+                            <option value="01">The Witcher 3</option>
+                            <option value="02">Skyrin</option>
+                        </optgroup>
+                        <optgroup label="RPG">
+                            <option value="03">Lendas</option>
+                            <option value="04">Final Fantasy VII</option>
+                        </optgroup>
+                    </select>
+                    </div>
+                </div>
+            </fieldset>
+            <!--Uso do textarea-->
+            <fieldset>
+                <legend>Usando o textarea</legend>
+                <div>
+                    <label for="txtbio">Biografia:</label>
+                    <textarea name="txtbio" id="txtbio" cols="30" rows="10">
+Aqui vai o texto (mesmo que value dos inputs)
+                    </textarea>
+                </div>
+            </fieldset>
+            <input type="submit" value="Enviar" id="btnEnviar">
+            <input type="reset" value="Limpar" id="btnLimpar">
         </form>
     </section>
 </body>
