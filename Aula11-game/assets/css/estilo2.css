@@ -19,12 +19,15 @@
     position: absolute;
     bottom: 0;
     height: 120px;
-    animation: mario-jump 1s infinite;
+}
+
+.jump{
+    animation: mario-jump 1s;
 }
 
 #nuvem{
     position: absolute;
-    width: 480px;
+    width: 390px;
     top: 0;
     right: 0;
     animation: nuvem-anime 7s infinite linear;
