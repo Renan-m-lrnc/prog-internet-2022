@@ -49,7 +49,16 @@ class Database {
     try{
       $ret->stmt = $ret->conn->prepare($sql);
       $ret->stmt->execute($dados);
-
+      //Para obter o último id inserido
+      foreach($ret->_tblChaves as $key => $vlr){
+        if (!array_key_exists($key, $dados)){
+          $ret->_tblChaves[$key] = $ret->conn->lastInsertId();
+        } else {
+          $ret->_tblChaves[$key] = $dados[$key];
+        }
+      }
+      $procura=array_values($ret->_tblChaves);
+      $ret = static::findByPk($procura);
       return $ret;
     }catch(PDOException $e){
       $msg = "Ocorreu um erro ao inserir. Erro: ". $e->getMessage();
